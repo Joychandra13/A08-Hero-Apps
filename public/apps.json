@@ -1,0 +1,218 @@
+[
+  {
+    "image": "https://surl.li/zmcdai",
+    "title": "ChatMaster AI",
+    "companyName": "NeuroSoft Labs",
+    "id": 1,
+    "description": "An advanced chatbot powered by AI to help with daily tasks, conversations, and learning.",
+    "size": 45,
+    "reviews": 15230,
+    "ratingAvg": 4.6,
+    "downloads": 1200000,
+    "ratings": [
+      { "name": "1 star", "count": 500 },
+      { "name": "2 star", "count": 800 },
+      { "name": "3 star", "count": 1200 },
+      { "name": "4 star", "count": 3500 },
+      { "name": "5 star", "count": 9250 }
+    ]
+  },
+  {
+    "image": "https://surl.li/agmzxz",
+    "title": "FitTrack Pro",
+    "companyName": "ActiveWell Inc.",
+    "id": 2,
+    "description": "A fitness tracking app that helps you monitor workouts, calories, and progress over time.",
+    "size": 78,
+    "reviews": 8420,
+    "ratingAvg": 4.3,
+    "downloads": 850000,
+    "ratings": [
+      { "name": "1 star", "count": 400 },
+      { "name": "2 star", "count": 600 },
+      { "name": "3 star", "count": 1500 },
+      { "name": "4 star", "count": 3000 },
+      { "name": "5 star", "count": 2920 }
+    ]
+  },
+  {
+    "image": "https://surl.li/ztpqaw",
+    "title": "PhotoSnap Editor",
+    "companyName": "Visionary Pixels",
+    "id": 3,
+    "description": "Edit, filter, and enhance your photos easily with professional-grade tools and AI effects.",
+    "size": 98,
+    "reviews": 20500,
+    "ratingAvg": 4.7,
+    "downloads": 2000000,
+    "ratings": [
+      { "name": "1 star", "count": 700 },
+      { "name": "2 star", "count": 900 },
+      { "name": "3 star", "count": 1600 },
+      { "name": "4 star", "count": 4800 },
+      { "name": "5 star", "count": 12400 }
+    ]
+  },
+  {
+    "image": "https://surl.li/wqzwsu",
+    "title": "TaskHero",
+    "companyName": "BrightApps Studio",
+    "id": 4,
+    "description": "Boost your productivity with smart to-do lists, reminders, and progress analytics.",
+    "size": 30,
+    "reviews": 7200,
+    "ratingAvg": 4.1,
+    "downloads": 500000,
+    "ratings": [
+      { "name": "1 star", "count": 300 },
+      { "name": "2 star", "count": 700 },
+      { "name": "3 star", "count": 1400 },
+      { "name": "4 star", "count": 2500 },
+      { "name": "5 star", "count": 2300 }
+    ]
+  },
+  {
+    "image": "https://surl.li/zqqcgv",
+    "title": "SoundWave Music",
+    "companyName": "EchoBeat Ltd.",
+    "id": 5,
+    "description": "Stream your favorite songs and discover trending music across genres.",
+    "size": 60,
+    "reviews": 54000,
+    "ratingAvg": 4.8,
+    "downloads": 8500000,
+    "ratings": [
+      { "name": "1 star", "count": 1200 },
+      { "name": "2 star", "count": 1600 },
+      { "name": "3 star", "count": 3200 },
+      { "name": "4 star", "count": 9500 },
+      { "name": "5 star", "count": 38500 }
+    ]
+  },
+  {
+    "image": "https://surl.li/hkavsm",
+    "title": "TravelMate",
+    "companyName": "GlobalGo",
+    "id": 6,
+    "description": "Plan trips, book hotels, and explore destinations with interactive maps and guides.",
+    "size": 82,
+    "reviews": 12600,
+    "ratingAvg": 4.5,
+    "downloads": 1600000,
+    "ratings": [
+      { "name": "1 star", "count": 700 },
+      { "name": "2 star", "count": 1000 },
+      { "name": "3 star", "count": 1800 },
+      { "name": "4 star", "count": 4200 },
+      { "name": "5 star", "count": 4900 }
+    ]
+  },
+  {
+    "image": "https://surl.li/ewrlei",
+    "title": "NoteEase",
+    "companyName": "ScribbleWorks",
+    "id": 7,
+    "description": "A minimal note-taking app with cloud sync and markdown support.",
+    "size": 25,
+    "reviews": 3100,
+    "ratingAvg": 4.2,
+    "downloads": 300000,
+    "ratings": [
+      { "name": "1 star", "count": 200 },
+      { "name": "2 star", "count": 300 },
+      { "name": "3 star", "count": 500 },
+      { "name": "4 star", "count": 900 },
+      { "name": "5 star", "count": 1200 }
+    ]
+  },
+  {
+    "image": "https://surl.li/rsarmw",
+    "title": "FinanceGuru",
+    "companyName": "SmartFin Technologies",
+    "id": 8,
+    "description": "Manage expenses, track savings, and analyze spending habits effectively.",
+    "size": 55,
+    "reviews": 9200,
+    "ratingAvg": 4.4,
+    "downloads": 900000,
+    "ratings": [
+      { "name": "1 star", "count": 400 },
+      { "name": "2 star", "count": 700 },
+      { "name": "3 star", "count": 1100 },
+      { "name": "4 star", "count": 3000 },
+      { "name": "5 star", "count": 4000 }
+    ]
+  },
+  {
+    "image": "https://surl.li/nwcwtc",
+    "title": "RecipeHub",
+    "companyName": "TastyTech",
+    "id": 9,
+    "description": "Discover and share thousands of recipes from around the world with step-by-step guides.",
+    "size": 70,
+    "reviews": 13400,
+    "ratingAvg": 4.6,
+    "downloads": 1700000,
+    "ratings": [
+      { "name": "1 star", "count": 600 },
+      { "name": "2 star", "count": 800 },
+      { "name": "3 star", "count": 1500 },
+      { "name": "4 star", "count": 4200 },
+      { "name": "5 star", "count": 6300 }
+    ]
+  },
+  {
+    "image": "https://surl.li/mldvbf",
+    "title": "StudyPal",
+    "companyName": "EduSync Co.",
+    "id": 10,
+    "description": "Organize your studies, set goals, and join student communities.",
+    "size": 48,
+    "reviews": 7400,
+    "ratingAvg": 4.3,
+    "downloads": 750000,
+    "ratings": [
+      { "name": "1 star", "count": 400 },
+      { "name": "2 star", "count": 600 },
+      { "name": "3 star", "count": 1200 },
+      { "name": "4 star", "count": 2500 },
+      { "name": "5 star", "count": 2700 }
+    ]
+  },
+  {
+    "image": "https://surl.li/abzavm",
+    "title": "GameZone Arcade",
+    "companyName": "PixelForge",
+    "id": 11,
+    "description": "Play hundreds of mini arcade games online or offline with leaderboard tracking.",
+    "size": 120,
+    "reviews": 27600,
+    "ratingAvg": 4.5,
+    "downloads": 3200000,
+    "ratings": [
+      { "name": "1 star", "count": 900 },
+      { "name": "2 star", "count": 1200 },
+      { "name": "3 star", "count": 2800 },
+      { "name": "4 star", "count": 7200 },
+      { "name": "5 star", "count": 15500 }
+    ]
+  },
+  {
+    "image": "https://surli.cc/gxxaye",
+    "title": "WeatherNow",
+    "companyName": "SkyCast Systems",
+    "id": 12,
+    "description": "Accurate weather updates, forecasts, and alerts for your region and beyond.",
+    "size": 40,
+    "reviews": 6200,
+    "ratingAvg": 4.2,
+    "downloads": 650000,
+    "ratings": [
+      { "name": "1 star", "count": 300 },
+      { "name": "2 star", "count": 600 },
+      { "name": "3 star", "count": 1100 },
+      { "name": "4 star", "count": 2100 },
+      { "name": "5 star", "count": 2100 }
+    ]
+  }
+]

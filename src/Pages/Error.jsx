@@ -9,7 +9,7 @@ const Error = () => {
     return (
         <>
         <Navbar/>
-        <div>{error.message}</div>
+        <div>error {error.message}</div>
         <Footer/>
         </>
     );
