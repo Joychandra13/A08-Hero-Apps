@@ -3,15 +3,14 @@ import GooglePlay from "../assets/GooglePlay.png";
 import AppStore from "../assets/AppStore.png";
 import Hero from "../assets/hero.png";
 import useApps from "../Hooks/useApps";
-import { useLoaderData } from "react-router";
+import { Link, useLoaderData } from "react-router";
 import downloads from "../assets/icon-downloads.png";
 import ratings from "../assets/icon-ratings.png";
 
 const Home = () => {
-  // const data = useApps
-  // console.log(data)
-  const apps = useLoaderData();
-  console.log(apps);
+  const {apps, error, loading} = useApps()
+
+  const sliceApps = apps.slice(0, 8)
   return (
     <div className="my-5 md:my-10 xl:my-20 text-[#001931]">
       <div className="flex flex-col gap-10 items-center pt-4 px-4">
@@ -72,9 +71,9 @@ const Home = () => {
             Explore All Trending Apps on the Market developed by us
           </p>
         </div>
-        <div className="max-w-[1440px] mx-auto px-4 mt-10">
+        <div className="max-w-[1440px] mx-auto px-4 mt-10 flex flex-col justify-center items-center">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 items-center">
-            {apps.map((app) => (
+            {sliceApps.map((app) => (
               <div key={app.id} className="card bg-base-100 shadow-lg">
                 <figure className="px-4 pt-4">
                   <img
@@ -107,6 +106,7 @@ const Home = () => {
               </div>
             ))}
           </div>
+        <Link to="/apps" className="btn mt-10 bg-gradient-to-r from-[#632ee3] to-[#9f62f2] text-white text-base font-semibold px-8">Show All</Link>
         </div>
       </div>
     </div>
