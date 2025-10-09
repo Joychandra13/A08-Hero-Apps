@@ -26,7 +26,7 @@ const AppDetails = () => {
   };
 
   return (
-    <div className="max-w-[1440px] mx-auto p-4 my-20 text-[#001931]">
+    <div className="max-w-[1440px] mx-auto p-4 my-5 md:my-10 xl:my-20 text-[#001931]">
       <div className="grid grid-cols-1 md:grid-cols-4 gap-10 ">
         <div className="md:col-span-1">
           <img className="w-full h-auto" src={image} alt={title} />

@@ -7,9 +7,9 @@ import { Link } from "react-router";
 import AppsCard from "../Components/AppsCard";
 
 const Home = () => {
-  const {apps, error, loading} = useApps()
+  const { apps, error, loading } = useApps();
 
-  const sliceApps = apps.slice(0, 8)
+  const sliceApps = apps.slice(0, 8);
   return (
     <div className="my-5 md:my-10 xl:my-20 text-[#001931]">
       <div className="flex flex-col gap-10 items-center pt-4 px-4">
@@ -30,19 +30,27 @@ const Home = () => {
           </p>
         </div>
         <div className="flex gap-4">
-          <button className="btn text-xl font-semibold py-7 px-5">
+          <a
+            href="https://play.google.com/store"
+            target="_blank"
+            className="btn text-xl font-semibold py-7 px-5"
+          >
             <img src={GooglePlay} alt="" />
             Google Play
-          </button>
-          <button className="btn text-xl font-semibold py-7 px-5">
+          </a>
+          <a
+            href="https://www.apple.com/app-store/"
+            target="_blank"
+            className="btn text-xl font-semibold py-7 px-5"
+          >
             <img src={AppStore} alt="" />
             App Store
-          </button>
+          </a>
         </div>
         <img src={Hero} alt="" />
       </div>
       <div className="bg-[linear-gradient(90deg,rgba(99,46,227,1)_0%,rgba(159,98,242,1)_100%)] text-white p-20 text-center">
-        <h1 className="text-5xl font-bold">
+        <h1 className="text-4xl md:text-5xl font-bold">
           Trusted by Millions, Built for You
         </h1>
         <div className="flex flex-col lg:flex-row gap-6 items-center justify-center mt-10">
@@ -72,9 +80,16 @@ const Home = () => {
         </div>
         <div className="max-w-[1440px] mx-auto px-4 mt-10 flex flex-col justify-center items-center">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 items-center">
-            {sliceApps.map((app) => (<AppsCard key={app.id} app={app}/>))}
+            {sliceApps.map((app) => (
+              <AppsCard key={app.id} app={app} />
+            ))}
           </div>
-        <Link to="/apps" className="btn mt-10 bg-gradient-to-r from-[#632ee3] to-[#9f62f2] text-white text-base font-semibold px-8">Show All</Link>
+          <Link
+            to="/apps"
+            className="btn mt-10 bg-gradient-to-r from-[#632ee3] to-[#9f62f2] text-white text-base font-semibold px-8"
+          >
+            Show All
+          </Link>
         </div>
       </div>
     </div>

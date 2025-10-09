@@ -8,7 +8,7 @@ const Error = () => {
   return (
     <>
       <Navbar />
-      <div className="h-fit flex flex-col justify-center items-center py-20 px-4 gap-4.5">
+      <div className="h-[84vh] flex flex-col justify-center items-center py-20 px-4 gap-4.5">
         <img src={error} alt="" />
         <div className="text-center">
             <h1 className="mb-2 text-[#001931] text-5xl font-bold">Oops, page not found!</h1>

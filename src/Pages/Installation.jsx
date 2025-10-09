@@ -24,7 +24,7 @@ const Installation = () => {
     toast.info("App Uninstalled Successfully ");
   };
   return (
-    <div className="max-w-[1440px] mx-auto p-4 my-20 text-[#001931]">
+    <div className="max-w-[1440px] mx-auto p-4 my-5 md:my-10 xl:my-20 text-[#001931]">
       <div className="text-center mb-10">
         <h1 className="text-5xl font-bold mb-4">Your Installed Apps</h1>
         <p className="text-xl text-[#627382]">
