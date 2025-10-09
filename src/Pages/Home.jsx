@@ -3,9 +3,8 @@ import GooglePlay from "../assets/GooglePlay.png";
 import AppStore from "../assets/AppStore.png";
 import Hero from "../assets/hero.png";
 import useApps from "../Hooks/useApps";
-import { Link, useLoaderData } from "react-router";
-import downloads from "../assets/icon-downloads.png";
-import ratings from "../assets/icon-ratings.png";
+import { Link } from "react-router";
+import AppsCard from "../Components/AppsCard";
 
 const Home = () => {
   const {apps, error, loading} = useApps()
@@ -73,38 +72,7 @@ const Home = () => {
         </div>
         <div className="max-w-[1440px] mx-auto px-4 mt-10 flex flex-col justify-center items-center">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 items-center">
-            {sliceApps.map((app) => (
-              <div key={app.id} className="card bg-base-100 shadow-lg">
-                <figure className="px-4 pt-4">
-                  <img
-                    src={app.image}
-                    alt={app.title}
-                    className="rounded-lg h-[316px] w-full"
-                  />
-                </figure>
-                <div className="card-body p-4">
-                  <h2 className="card-title">{app.title}</h2>
-                  <div className="card-actions flex items-center justify-between">
-                    <div className="py-2 px-2.5 bg-[#F1F5E8] flex items-center rounded-[4px] gap-2">
-                      <img className="w-4 h-4" src={downloads} />{" "}
-                      <h1 className="text-[#00D390] text-base font-medium">
-                        {app.downloads >= 1000000
-                          ? (app.downloads / 1000000).toFixed(1) + "M"
-                          : app.downloads >= 1000
-                          ? (app.downloads / 1000).toFixed(1) + "K"
-                          : app.downloads}
-                      </h1>
-                    </div>
-                    <div className="py-2 px-2.5 bg-[#F1F5E8] flex items-center rounded-[4px] gap-2">
-                      <img className="w-4 h-4" src={ratings} />{" "}
-                      <h1 className="text-[#FF8811] text-base font-medium">
-                        {app.ratingAvg}
-                      </h1>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
+            {sliceApps.map((app) => (<AppsCard key={app.id} app={app}/>))}
           </div>
         <Link to="/apps" className="btn mt-10 bg-gradient-to-r from-[#632ee3] to-[#9f62f2] text-white text-base font-semibold px-8">Show All</Link>
         </div>
