@@ -1,13 +1,10 @@
 import React from "react";
-import Navbar from "../Components/Navbar";
-import Footer from "../Components/Footer";
-import error from "../assets/error-404.png";
+import error from "../assets/App-Error.png";
 import { Link } from "react-router";
 
-const Error = () => {
+const AppDetailsError = () => {
   return (
     <>
-      <Navbar />
       <div className="h-fit flex flex-col justify-center items-center py-20 px-4 gap-4.5">
         <img src={error} alt="" />
         <div className="text-center">
@@ -16,9 +13,8 @@ const Error = () => {
             <Link to="/" className="btn mt-10 bg-gradient-to-r from-[#632ee3] to-[#9f62f2] text-white text-base font-semibold px-8">Go Back!</Link>
         </div>
       </div>
-      <Footer />
     </>
   );
 };
 
-export default Error;
+export default AppDetailsError;

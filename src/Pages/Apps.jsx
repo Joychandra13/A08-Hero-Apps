@@ -2,15 +2,23 @@ import React, { useState } from "react";
 import useApps from "../Hooks/useApps";
 import { CiSearch } from "react-icons/ci";
 import AppsCard from "../Components/AppsCard";
+import LoadingSpinner from "../Components/LoadingSpinner";
 
 const Apps = () => {
   const { apps } = useApps();
+  const [loading, setLoading] = useState(false);
 
   const [search, setSearch] = useState("");
   const tirm = search.trim().toLocaleLowerCase();
   const searchedApps = tirm
     ? apps.filter((app) => app.title.toLocaleLowerCase().includes(tirm))
     : apps;
+
+  const handleSearch = (e) => {
+    setSearch(e.target.value);
+    setLoading(true);
+    setTimeout(() => setLoading(false), 300);
+  };
 
   return (
     <>
@@ -31,21 +39,23 @@ const Apps = () => {
                 <CiSearch />
               </span>
               <input
-                value={search}
-                onChange={(e) => setSearch(e.target.value)}
                 type="search"
+                value={search}
+                onChange={handleSearch}
                 placeholder="Search Apps"
               />
             </label>
           </div>
-          {searchedApps.length === 0 ? (
+          {loading ? (
             <div className="flex justify-center items-center h-[45vh]">
-              <h2 className="text-3xl font-semibold text-[#627382]">
-                No apps found!
-              </h2>
+              <LoadingSpinner />
+            </div>
+          ) : searchedApps.length === 0 ? (
+            <div className="flex justify-center items-center h-[45vh]">
+              <h2 className="text-xl text-gray-500">No apps found!</h2>
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 items-center">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
               {searchedApps.map((app) => (
                 <AppsCard key={app.id} app={app} />
               ))}

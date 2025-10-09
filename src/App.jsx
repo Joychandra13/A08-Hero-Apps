@@ -1,20 +1,29 @@
-import { Outlet } from 'react-router'
-import './App.css'
-import Footer from './Components/Footer'
-import Navbar from './Components/Navbar'
+import { Outlet, useLocation } from "react-router";
+import { useEffect, useState } from "react";
+import Navbar from "./Components/Navbar";
+import Footer from "./Components/Footer";
+import LoadingSpinner from "./Components/LoadingSpinner";
 import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 
 function App() {
+  const location = useLocation();
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    setLoading(true);
+    const timer = setTimeout(() => setLoading(false), 300);
+    return () => clearTimeout(timer);
+  }, [location.pathname]);
 
   return (
     <>
-    <Navbar/>
-    <Outlet/>
-    <Footer/>
-    <ToastContainer />
+      <Navbar />
+      {loading && <LoadingSpinner />}
+      {!loading && <Outlet />}
+      <Footer />
+      <ToastContainer />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

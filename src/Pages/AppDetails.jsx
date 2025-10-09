@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useParams } from "react-router";
+import { useParams } from "react-router";
 import useApps from "../Hooks/useApps";
 import Downloads from "../assets/icon-downloads.png";
 import Ratings from "../assets/icon-ratings.png";
@@ -7,15 +7,15 @@ import Reviews from "../assets/icon-review.png";
 import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer } from "recharts";
 import { updateList } from "../utils/localStorage";
 import { toast } from "react-toastify";
+import AppDetailsError from "./AppDetailsError";
 
 
 const AppDetails = () => {
   const { id } = useParams();
-  const { apps, loading, } = useApps();
+  const { apps} = useApps();
   const [installed, setInstalled] = useState(false);
-
   const app = apps.find((a) => String(a.id) === id);
-  if (loading) return <p>Loading.......</p>;
+  if (!app) return <AppDetailsError />;
   const {
     title, image, companyName, downloads, ratingAvg, reviews, size, description, } = app || {};
 
@@ -87,15 +87,11 @@ const AppDetails = () => {
             <XAxis
               type="number"
               tick={{ fill: "#627382", fontSize: 18 }}
-              axisLine={false}
-              tickLine={false}
             />
             <YAxis
               dataKey="name"
               type="category"
               tick={{ fill: "#627382", fontSize: 18 }}
-              axisLine={false}
-              tickLine={false}
             />
             <Bar dataKey="count" fill="#FF8811" barSize={30} />
           </BarChart>
