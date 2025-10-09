@@ -53,7 +53,7 @@ const Home = () => {
         <h1 className="text-4xl md:text-5xl font-bold">
           Trusted by Millions, Built for You
         </h1>
-        <div className="flex flex-col lg:flex-row gap-6 items-center justify-center mt-10">
+        <div className="flex flex-col lg:flex-row gap-20 md:gap-6 items-center justify-center mt-10">
           <div className="flex flex-col gap-4 px-23">
             <p className="text-base">Total Downloads</p>
             <h1 className="text-7xl font-extrabold">29.6M</h1>

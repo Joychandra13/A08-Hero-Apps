@@ -49,9 +49,9 @@ const Installation = () => {
             </select>
           </label>
         </div>
-        <div className="space-y-3 h-[40vh] ">
+        <div className="space-y-3  ">
           {sortedItem.length === 0 ? (
-            <div className="text-center w-full pt-20">
+            <div className="text-center w-full py-38">
               <h2 className="text-3xl font-semibold mb-3 text-gray-600">
                 No Apps Found
               </h2>
@@ -63,7 +63,7 @@ const Installation = () => {
             sortedItem.map((app) => (
               <div key={app.id} className="card bg-base-100 shadow-lg px-4">
                 <div className="flex flex-col md:flex-row justify-between items-center">
-                  <div className="flex">
+                  <div className="flex flex-col md:flex-row mt-4 md:mt-0">
                     <figure>
                       <img
                         src={app.image}
@@ -71,7 +71,7 @@ const Installation = () => {
                         className="rounded-lg w-20 h-20"
                       />
                     </figure>
-                    <div className="card-body">
+                    <div className="card-body flex items-center md:items-start">
                       <h2 className="card-title">{app.title}</h2>
                       <div className="card-actions flex items-center gap-4">
                         <div className="flex items-center gap-2">

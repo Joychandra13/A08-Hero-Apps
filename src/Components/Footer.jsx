@@ -5,7 +5,7 @@ import { Link } from "react-router";
 const Footer = () => {
   return (
     <div className=" bg-[#001931]">
-      <footer className="footer sm:footer-horizontal text-neutral-content items-center max-w-[1440px] mx-auto p-4"> 
+      <footer className="footer sm:footer-horizontal text-neutral-content items-center max-w-[1440px] mx-auto p-4 bottom-0"> 
         <aside className="grid-flow-col items-center">
           <Link className="flex items-center gap-1" to="/">
             <img className="w-[40px] h-[40px]" src={logo} alt="" />

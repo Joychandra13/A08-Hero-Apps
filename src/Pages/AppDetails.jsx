@@ -40,11 +40,11 @@ const AppDetails = () => {
             </span>
           </p>
           <hr className="my-7.5 border-t border-[#001931]/20" />
-          <div className="card-actions flex items-center justify-items-start">
-            <div className="flex flex-col items-start w-37.5 gap-2">
+          <div className="card-actions flex items-center justify-between md:justify-normal md:justify-items-start mb-5">
+            <div className="flex flex-col items-start md:w-37.5 gap-2">
               <img className="w-10 h-10" src={Downloads} />
-              <p className="text-base text-[#627382]">Downloads</p>
-              <h1 className="text-[40px] font-extrabold">
+              <p className="text-sm md:text-base text-[#627382]">Downloads</p>
+              <h1 className="text-3xl md:text-[40px] font-extrabold">
                 {downloads >= 1000000
                   ? (downloads / 1000000).toFixed(1) + "M"
                   : downloads >= 1000
@@ -52,15 +52,15 @@ const AppDetails = () => {
                   : downloads}
               </h1>
             </div>
-            <div className="flex flex-col items-start w-37.5 gap-2">
+            <div className="flex flex-col items-start md:w-37.5 gap-2">
               <img className="w-10 h-10" src={Ratings} />
-              <p className="text-base text-[#627382]">Average Ratings</p>
-              <h1 className="text-[40px] font-extrabold">{ratingAvg}</h1>
+              <p className="text-sm md:text-base text-[#627382]">Average Ratings</p>
+              <h1 className="text-3xl md:text-[40px] font-extrabold">{ratingAvg}</h1>
             </div>
             <div className="flex flex-col items-start w-37.5 gap-2">
               <img className="w-10 h-10" src={Reviews} />
-              <p className="text-base text-[#627382]">Total Reviews</p>
-              <h1 className="text-[40px] font-extrabold">
+              <p className="text-sm md:text-base text-[#627382]">Total Reviews</p>
+              <h1 className="text-3xl md:text-[40px] font-extrabold">
                 {reviews >= 1000000
                   ? (reviews / 1000000).toFixed(1) + "M"
                   : reviews >= 1000

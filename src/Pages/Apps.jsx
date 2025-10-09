@@ -47,11 +47,11 @@ const Apps = () => {
             </label>
           </div>
           {loading ? (
-            <div className="flex justify-center items-center h-[45vh]">
+            <div className="flex justify-center items-center ">
               <LoadingSpinner />
             </div>
           ) : searchedApps.length === 0 ? (
-            <div className="flex justify-center items-center h-[45vh]">
+            <div className="flex justify-center items-center py-50">
               <h2 className="text-xl text-gray-500">No apps found!</h2>
             </div>
           ) : (

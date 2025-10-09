@@ -17,11 +17,16 @@ function App() {
 
   return (
     <>
+    <div className=" flex flex-col min-h-screen" >
       <Navbar />
       {loading && <LoadingSpinner />}
-      {!loading && <Outlet />}
-      <Footer />
+      
+      {!loading && <div className="flex-1"><Outlet /></div>}
+        <div className="mt-auto ">
+    <Footer />
+  </div>
       <ToastContainer />
+      </div>
     </>
   );
 }
