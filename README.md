@@ -12,6 +12,6 @@ Hero Apps is a web application that showcases a collection of top-rated mobile a
 - React Icons
 - axios
 - Recharts
-- image kit io
+- image kit io for image links
 - react-toastify
 - Netlify for deployment
