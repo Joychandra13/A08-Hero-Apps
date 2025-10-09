@@ -5,22 +5,15 @@ import Downloads from "../assets/icon-downloads.png";
 import Ratings from "../assets/icon-ratings.png";
 import Reviews from "../assets/icon-review.png";
 import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer } from "recharts";
+import { updateList } from "../utils/localStorage";
 
 const AppDetails = () => {
   const { id } = useParams();
-  const { apps, loading, error } = useApps();
+  const { apps, loading, } = useApps();
   const app = apps.find((a) => String(a.id) === id);
   if (loading) return <p>Loading.......</p>;
   const {
-    title,
-    image,
-    companyName,
-    downloads,
-    ratingAvg,
-    reviews,
-    size,
-    description,
-  } = app || {};
+    title, image, companyName, downloads, ratingAvg, reviews, size, description, } = app || {};
 
   return (
     <div className="max-w-[1440px] mx-auto p-4 my-20 text-[#001931]">
@@ -66,9 +59,9 @@ const AppDetails = () => {
               </h1>
             </div>
           </div>
-          <Link className=" btn bg-[linear-gradient(90deg,rgba(0,130,122,1)_0%,rgba(84,207,104,1)_100%)] text-xl font-semibold text-white py-3.5 px-5">
+          <button onClick={() => updateList(app)} className=" btn bg-[linear-gradient(90deg,rgba(0,130,122,1)_0%,rgba(84,207,104,1)_100%)] text-xl font-semibold text-white py-3.5 px-5">
             Install Now ({size} MB)
-          </Link>
+          </button>
         </div>
       </div>
       <hr className="my-10 border-t border-[#001931]/20" />
