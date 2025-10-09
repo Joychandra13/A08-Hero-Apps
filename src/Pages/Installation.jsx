@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { loadInstall, removeFromInstall } from "../utils/localStorage";
 import Downloads from "../assets/icon-downloads.png";
 import Ratings from "../assets/icon-ratings.png";
+import { toast } from "react-toastify";
 
 const Installation = () => {
   const [install, setInstall] = useState(() => loadInstall());
@@ -20,6 +21,7 @@ const Installation = () => {
   const handleRemove = (id) => {
     removeFromInstall(id);
     setInstall((prev) => prev.filter((a) => a.id !== id));
+    toast.info("App Uninstalled Successfully ");
   };
   return (
     <div className="max-w-[1440px] mx-auto p-4 my-20 text-[#001931]">
@@ -47,55 +49,65 @@ const Installation = () => {
             </select>
           </label>
         </div>
-        <div className="space-y-3">
-          {sortedItem.map((app) => (
-            <div className="card bg-base-100 shadow-lg px-4">
-              <div className="flex justify-between items-center">
-                <div className="flex">
-                  {" "}
-                  <figure className="">
-                    <img
-                      src={app.image}
-                      alt={app.title}
-                      className="rounded-lg w-20 h-20 "
-                    />
-                  </figure>
-                  <div className="card-body  ">
-                    <h2 className="card-title">{app.title}</h2>
-                    <div className="card-actions flex items-center justify-items-start gap-4.5">
-                      <div className="flex items-center rounded-[4px] gap-2">
-                        <img className="w-4 h-4" src={Downloads} />{" "}
-                        <h1 className="text-[#00D390] text-base font-medium">
-                          {app.downloads >= 1000000
-                            ? (app.downloads / 1000000).toFixed(1) + "M"
-                            : app.downloads >= 1000
-                            ? (app.downloads / 1000).toFixed(1) + "K"
-                            : app.downloads}
-                        </h1>
-                      </div>
-                      <div className="flex items-center rounded-[4px] gap-2">
-                        <img className="w-4 h-4" src={Ratings} />{" "}
-                        <h1 className="text-[#FF8811] text-base font-medium">
-                          {app.ratingAvg}
-                        </h1>
-                      </div>
-                      <div className="flex items-center rounded-[4px] gap-2">
-                        <h1 className="text-[#627382] text-base ">
-                          {app.size} MB
-                        </h1>
+        <div className="space-y-3 h-[40vh] ">
+          {sortedItem.length === 0 ? (
+            <div className="text-center w-full pt-20">
+              <h2 className="text-3xl font-semibold mb-3 text-gray-600">
+                No Apps Found
+              </h2>
+              <p className="text-lg text-gray-500">
+                Install apps to see them listed here.
+              </p>
+            </div>
+          ) : (
+            sortedItem.map((app) => (
+              <div key={app.id} className="card bg-base-100 shadow-lg px-4">
+                <div className="flex flex-col md:flex-row justify-between items-center">
+                  <div className="flex">
+                    <figure>
+                      <img
+                        src={app.image}
+                        alt={app.title}
+                        className="rounded-lg w-20 h-20"
+                      />
+                    </figure>
+                    <div className="card-body">
+                      <h2 className="card-title">{app.title}</h2>
+                      <div className="card-actions flex items-center gap-4">
+                        <div className="flex items-center gap-2">
+                          <img className="w-4 h-4" src={Downloads} alt="" />
+                          <h1 className="text-[#00D390] text-base font-medium">
+                            {app.downloads >= 1000000
+                              ? (app.downloads / 1000000).toFixed(1) + "M"
+                              : app.downloads >= 1000
+                              ? (app.downloads / 1000).toFixed(1) + "K"
+                              : app.downloads}
+                          </h1>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <img className="w-4 h-4" src={Ratings} alt="" />
+                          <h1 className="text-[#FF8811] text-base font-medium">
+                            {app.ratingAvg}
+                          </h1>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <h1 className="text-[#627382] text-base">
+                            {app.size} MB
+                          </h1>
+                        </div>
                       </div>
                     </div>
                   </div>
+                  <button
+                    onClick={() => handleRemove(app.id)}
+                    className="btn bg-gradient-to-r from-[#00827A] to-[#54CF68] text-white font-semibold mb-4 md:mb-0"
+                  >
+                    Uninstall
+                  </button>
                 </div>
-                <button
-                  onClick={() => handleRemove(app.id)}
-                  className="btn bg-[linear-gradient(90deg,rgba(0,130,122,1)_0%,rgba(84,207,104,1)_100%)] text-white font-semibold"
-                >
-                  Uninstall
-                </button>
               </div>
-            </div>
-          ))}
+            ))
+          )}
         </div>
       </div>
     </div>

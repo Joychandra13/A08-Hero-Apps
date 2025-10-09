@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, useParams } from "react-router";
 import useApps from "../Hooks/useApps";
 import Downloads from "../assets/icon-downloads.png";
@@ -6,14 +6,24 @@ import Ratings from "../assets/icon-ratings.png";
 import Reviews from "../assets/icon-review.png";
 import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer } from "recharts";
 import { updateList } from "../utils/localStorage";
+import { toast } from "react-toastify";
+
 
 const AppDetails = () => {
   const { id } = useParams();
   const { apps, loading, } = useApps();
+  const [installed, setInstalled] = useState(false);
+
   const app = apps.find((a) => String(a.id) === id);
   if (loading) return <p>Loading.......</p>;
   const {
     title, image, companyName, downloads, ratingAvg, reviews, size, description, } = app || {};
+
+ const handleInstall = () => {
+    updateList(app); 
+    setInstalled(true); 
+    toast.success("App Installed Successfully"); 
+  };
 
   return (
     <div className="max-w-[1440px] mx-auto p-4 my-20 text-[#001931]">
@@ -59,8 +69,9 @@ const AppDetails = () => {
               </h1>
             </div>
           </div>
-          <button onClick={() => updateList(app)} className=" btn bg-[linear-gradient(90deg,rgba(0,130,122,1)_0%,rgba(84,207,104,1)_100%)] text-xl font-semibold text-white py-3.5 px-5">
-            Install Now ({size} MB)
+          <button onClick={handleInstall}
+            disabled={installed}  className=" btn bg-[linear-gradient(90deg,rgba(0,130,122,1)_0%,rgba(84,207,104,1)_100%)] text-xl font-semibold text-white py-3.5 px-5">
+           {installed ? "Installed ✅" : `Install Now (${size} MB)`}
           </button>
         </div>
       </div>

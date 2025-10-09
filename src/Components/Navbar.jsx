@@ -87,7 +87,7 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end">
-          <a className="btn bg-gradient-to-r from-[#632ee3] to-[#9f62f2] text-white">
+          <a href="https://github.com/Joychandra13" target="_blank" className="btn bg-gradient-to-r from-[#632ee3] to-[#9f62f2] text-white">
             <FaGithub /> Contribute
           </a>
         </div>
